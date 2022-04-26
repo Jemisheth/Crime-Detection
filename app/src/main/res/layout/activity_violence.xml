@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViolenceActivity">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Violence Crime"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="358dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:srcCompat="@drawable/violence" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="361dp"
+        android:layout_height="363dp"
+        android:layout_marginTop="28dp"
+        android:text="KOZHIKODE: The car in which the groom and his relatives were travelling were smashed by the bride’s uncles in Koyilandy.The incident happened in broad daylight yesterday. The attack was witnesssed at Naderi coming under Koyilandy station limits. Reports said that a dispute related to the marraige ended in the attack. It is hinted that the bride's uncles are behind the attack. The register marriage of Muhammed Salih, a native of Koyilandy and the girl from the Naderi had taken place months back. The bride's father later invited the groom and his relatives for the marriage to be solemnished ap per their religious beliefs.Neighbours said this led to the attack. The groom and his team arrived in two cars. The bride’s relatives identified as Kabeer and Manzoor unleashed violence towards them. They attacked them with swords and iron pipes. The two cars were vandalised."
+        android:textAlignment="inherit"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

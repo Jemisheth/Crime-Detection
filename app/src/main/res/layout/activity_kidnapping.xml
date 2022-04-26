@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KidnappingActivity">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Kidnapping Crime"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="360dp"
+        android:layout_height="226dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/kidnapping" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="390dp"
+        android:layout_height="387dp"
+        android:layout_marginTop="10dp"
+        android:text="Guwahati: In a video message from an undisclosed location, two employees of an oil drilling company who were kidnapped in Arunachal Pradesh last month have appealed to Bihar Chief Minister Nitish Kumar and Assam's Sarbananda Sonowal to step up efforts to have them released. The two kidnapped people - radio operator Ram Kumar, 35, and drilling superintendent Pranab Kumar Gogoi, 51 - are being held captive by the rebel groups ULFA-Independent and NSCN for a month now.  In the two videos released by the ULFA-Independent, the two workers are being seen pleading to their respective state governments for making arrangements for their safe return home.  Armed militants kidnapped the employees of the private company from the drilling site belonging to Oil India Limited (OIL) on December 21.  While Mr Gogoi worked as a drilling supervisor, Mr Kumar worked as a radio operator for Quippo which is the drilling operator for Oil India wells in Innao area of Arunachal's Changlang district.  &quot;It has been one month since we were kidnapped by ULFA-I and NSCN-IM which are in conflict with our company. I appeal to the Bihar Chief Minister Nitish Kumar to talk to Assam Chief Minister to secure my release from my captors, Ram Kumar says in the video message. Mr Gogoi made a similar appeal to the Assam Chief Minister."
+        android:textAlignment="inherit"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+</androidx.constraintlayout.widget.ConstraintLayout>
