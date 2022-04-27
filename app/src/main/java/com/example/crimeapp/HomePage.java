@@ -1,8 +1,5 @@
 package com.example.crimeapp;
 
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +12,10 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,9 +23,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -90,24 +89,19 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
 
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        bottomNavigationView.setOnNavigationItemReselectedListener(menuitem -> {
 
+            switch (menuitem.getItemId()){
+                case R.id.crime: startActivity(new Intent(getApplicationContext(),Crime_Activity.class));
+                    overridePendingTransition(0,0);
+                    return;
 
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem menuitem) {
+                case R.id.home:
+                    return;
 
-                switch (menuitem.getItemId()){
-                    case R.id.crime: startActivity(new Intent(getApplicationContext(),Crime_Activity.class));
-                        overridePendingTransition(0,0);
-                        return;
-
-                    case R.id.home:
-                        return;
-
-                    case R.id.addimage: startActivity(new Intent(getApplicationContext(),ImageActivity.class));
-                        overridePendingTransition(0,0);
-                        return;
-                }
+                case R.id.addimage: startActivity(new Intent(getApplicationContext(),ImageActivity.class));
+                    overridePendingTransition(0,0);
+                    return;
             }
         });
 
@@ -170,16 +164,13 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
 
         // click listener to marker
 
-        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(@NonNull Marker marker) {
+        map.setOnMarkerClickListener(marker -> {
 
-                String markertitle = marker.getTitle();
-                Intent i = new Intent(HomePage.this, MurderActivity.class);
-                i.putExtra("title",markertitle);
-                startActivity(i);
-                return true;
-            }
+            String markertitle = marker.getTitle();
+            Intent i = new Intent(HomePage.this, MurderActivity.class);
+            i.putExtra("title",markertitle);
+            startActivity(i);
+            return true;
         });
 
         googleMap.getUiSettings().setZoomControlsEnabled(true);
