@@ -173,9 +173,14 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
             return true;
         });
 
+        // use for the to zoom in and zoom out in the map
         googleMap.getUiSettings().setZoomControlsEnabled(true);
+        // direction compass enabled
         googleMap.getUiSettings().setCompassEnabled(true);
+        // we can scroll the map
         googleMap.getUiSettings().setScrollGesturesEnabled(true);
+
+        // use for the current location of the user
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             // TODO: Consider calling
