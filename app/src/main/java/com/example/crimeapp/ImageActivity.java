@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -18,12 +19,14 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.MediaStore;
+import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -34,11 +37,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class ImageActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    // initialize the variable fot the date.
     TextView tvdate;
     DatePickerDialog.OnDateSetListener setListener;
+
+    // initialize the variable fot the time.
+    TextView tvtime;
+    int t1Hour,t1Minute;
 
     SupportMapFragment mapFragment;
     GoogleMap map;
@@ -52,6 +61,47 @@ public class ImageActivity extends FragmentActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
 
+        //Assign Variable for the time picker
+
+        tvtime = findViewById(R.id.tvtime);
+
+        tvtime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // initialize the time picker dialog
+                TimePickerDialog timePickerDialog = new TimePickerDialog(ImageActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        // initialize hour and minute
+                        t1Hour = hourOfDay;
+                        t1Minute = minute;
+
+                        // initialize the calender
+
+                        Calendar calendar = Calendar.getInstance();
+
+                        // Set hour and minute
+
+                        calendar.set(0,0,0,t1Hour,t1Minute);
+
+                        // set the selected time on the textview
+
+                        tvtime.setText(DateFormat.format("hh:mm aa",calendar));
+
+                    }
+                }, 12,0,false
+                );
+
+                // display previous selected time
+
+                timePickerDialog.updateTime(t1Hour,t1Minute);
+                timePickerDialog.show();
+            }
+        });
+
+        //Assign Variable for the date picker
         tvdate = findViewById(R.id.tvdate);
 
         Calendar calendar = Calendar.getInstance();

@@ -11,9 +11,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="409dp"
         android:layout_height="199dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,14 +74,32 @@
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_calendar_month"
         android:drawablePadding="6dp"
+        android:paddingRight="6dp"
         android:text="Select Date"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.058"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:drawableLeft="@drawable/ic_time"
+        android:drawablePadding="6dp"
+        android:text="Select Time"
+        android:textAlignment="center"
+        android:paddingRight="6dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintStart_toEndOf="@+id/tvdate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
