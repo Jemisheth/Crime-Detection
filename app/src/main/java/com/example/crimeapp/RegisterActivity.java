@@ -34,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -71,7 +72,6 @@ public class RegisterActivity extends AppCompatActivity  {
     private void createUser() {
 
             String fname = firstname.getText().toString();
-            String lname = lastname.getText().toString();
             String Email = email.getText().toString();
             String phone = contactNo.getText().toString();
             String Password = password.getText().toString();
@@ -93,6 +93,7 @@ public class RegisterActivity extends AppCompatActivity  {
         else if(phone.isEmpty() || phone.length()<10)
         {
             showerror(contactNo,"Number not valid");
+            contactNo.requestFocus();
         }
         else
         {
@@ -116,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity  {
                                         startActivity(i);
 
                                 }else{
-                                    Toast.makeText(RegisterActivity.this, "User registration failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "User registration failed" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

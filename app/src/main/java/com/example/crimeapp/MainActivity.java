@@ -3,6 +3,7 @@ package com.example.crimeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,22 +22,35 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-    TextView button;
+
+    TextView button, btnforgetpassword;
     EditText textpassword,textemail;
     Button btnlogin;
     FirebaseAuth mAuth;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textemail = findViewById(R.id.textemail);
         textpassword = findViewById(R.id.textpassword);
+        btnforgetpassword = findViewById(R.id.btnforgetpassword);
         button = findViewById(R.id.ButtonSignUp);
         btnlogin = findViewById(R.id.btnlogin); 
 
 
         button.setOnClickListener(view ->{
             startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+        });
+
+        btnforgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Forgetpassword.class);
+                startActivity(i);
+            }
         });
 
         mAuth = FirebaseAuth.getInstance();
@@ -47,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private void loginUser() {
+
         String email = textemail.getText().toString();
         String password = textpassword.getText().toString();
 
@@ -54,24 +69,32 @@ public class MainActivity extends AppCompatActivity {
         {
             textemail.setError("Email cannot be empty");
             textemail.requestFocus();
-        }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        }
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+
             textemail.setError("Please provide valid email");
             textemail.requestFocus();
             return;
-        }else if(TextUtils.isEmpty((password))){
+        }
+        else if(TextUtils.isEmpty((password))){
+
             textpassword.setError("Password cannot be empty");
             textpassword.requestFocus();
-        }else{
+        }
+        else{
 
             mAuth.signInWithEmailAndPassword( email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+
                     if(task.isSuccessful()){
+
                         Toast.makeText(MainActivity.this, "User Logged in succefully", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(MainActivity.this, HomePage.class);
                         startActivity(i);
-                    }else{
-                        Toast.makeText(MainActivity.this, "User registration failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "User registration failed" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

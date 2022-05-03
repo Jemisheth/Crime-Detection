@@ -64,7 +64,6 @@ public class ImageActivity extends FragmentActivity implements OnMapReadyCallbac
         //Assign Variable for the time picker
 
         tvtime = findViewById(R.id.tvtime);
-
         tvtime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +99,7 @@ public class ImageActivity extends FragmentActivity implements OnMapReadyCallbac
                 timePickerDialog.show();
             }
         });
+
 
         //Assign Variable for the date picker
         tvdate = findViewById(R.id.tvdate);

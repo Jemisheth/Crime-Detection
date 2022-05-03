@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrimeApp">
         <activity
+            android:name=".changepassword"
+            android:exported="false" />
+        <activity
+            android:name=".Forgetpassword"
+            android:exported="false" />
+        <activity
             android:name=".IdentityTheftActivity"
             android:exported="false" />
         <activity
