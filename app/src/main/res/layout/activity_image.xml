@@ -46,7 +46,7 @@
         android:layout_width="417dp"
         android:layout_height="56dp"
         android:layout_marginTop="336dp"
-        android:text="Choose image to upload"
+        android:text="Add Images"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,30 +76,49 @@
         android:drawablePadding="6dp"
         android:paddingRight="6dp"
         android:text="Select Date"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.058"
-        android:textAlignment="center"/>
+        app:layout_constraintVertical_bias="0.117" />
 
     <TextView
         android:id="@+id/tvtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="148dp"
         android:drawableLeft="@drawable/ic_time"
         android:drawablePadding="6dp"
+        android:paddingRight="6dp"
         android:text="Select Time"
         android:textAlignment="center"
-        android:paddingRight="6dp"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/tvdate" />
+
+    <EditText
+        android:id="@+id/adddetails"
+        android:layout_width="394dp"
+        android:layout_height="113dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Add detalis...."
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/imageview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintVertical_bias="0.904"
+        tools:ignore="RtlCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
