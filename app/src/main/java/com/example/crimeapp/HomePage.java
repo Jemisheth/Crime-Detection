@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
@@ -38,7 +37,7 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
     private Button btn;
     private Marker marker;
 
-    ArrayList<LatLng>arrayList = new ArrayList<LatLng>();
+    ArrayList<LatLng>arrayList = new ArrayList<>();
     LatLng Delhi = new LatLng(28.706851, 77.156666);
     LatLng Guj = new LatLng(22.463309, 70.058649);
     LatLng Mumbai = new LatLng(19.083406, 72.882880);
@@ -52,7 +51,7 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
 
 
     // another arraylist for the names of the marker
-    ArrayList<String>title  = new ArrayList<String>();
+    ArrayList<String>title  = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +99,10 @@ HomePage extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMar
                     return;
 
                 case R.id.addimage: startActivity(new Intent(getApplicationContext(),ImageActivity.class));
+                    overridePendingTransition(0,0);
+                    return;
+
+                case R.id.myreport: startActivity(new Intent(getApplicationContext(),Myreports.class));
                     overridePendingTransition(0,0);
                     return;
             }

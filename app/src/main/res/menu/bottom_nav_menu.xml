@@ -15,5 +15,10 @@
         android:icon="@drawable/ic_crime"
         />
 
+    <item android:title="My reports"
+        android:id="@+id/myreport"
+        android:icon="@drawable/ic_description"
+        />
+
 
 </menu>

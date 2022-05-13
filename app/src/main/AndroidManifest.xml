@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrimeApp">
         <activity
+            android:name=".Myreports"
+            android:exported="false" />
+        <activity
             android:name=".changepassword"
             android:exported="false" />
         <activity
