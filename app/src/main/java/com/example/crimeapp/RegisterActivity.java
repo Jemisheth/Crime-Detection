@@ -24,6 +24,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity  {
 
@@ -106,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity  {
                     if (task.isSuccessful()){
                         User user = new User(fname,Email,Password,phone);
                         FirebaseDatabase.getInstance().getReference("users")
-                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                                 .setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
 
                                   @Override
