@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">CrimeApp</string>
     <string name="er">ER</string>
+    <string-array name = "crimeType">
+        <item>Murder</item>
+        <item>Violence</item>
+        <item>Friring</item>
+        <item>Robbery</item>
+        <item>IdentityTheft</item>
+        <item>Kidnapping</item>
+        <item>Burglary</item>
+    </string-array>
 </resources>

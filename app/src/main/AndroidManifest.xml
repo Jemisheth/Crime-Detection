@@ -36,9 +36,6 @@
             android:name=".KidnappingActivity"
             android:exported="false" />
         <activity
-            android:name=".IdentitytheftActivity"
-            android:exported="false" />
-        <activity
             android:name=".FiringActivity"
             android:exported="false" />
         <activity
